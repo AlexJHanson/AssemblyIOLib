@@ -21,6 +21,6 @@ Returns the number of chars written out.
 
 ## Using the library
 
-provided as libIOLibrary.so &nbsp;|&nbsp; Modify provided Makefile and recompile to dylib for MacOS
+provided as libIOLibrary.so
 
 gcc link command *__-lIOLibrary__* 
