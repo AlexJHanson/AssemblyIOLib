@@ -8,8 +8,12 @@
 
 int main(void) {
 
-    putInt(-12394);
+    int num;
 
+    writeStr("\nEnter an integer: ");
+    getInt(&num);
+    writeStr("\nYou entered: ");
+    putInt(num);
     writeStr("\n");
 
     return 0;

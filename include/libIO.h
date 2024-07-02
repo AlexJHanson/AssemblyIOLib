@@ -4,5 +4,6 @@
 int readLn(char* str, int max);
 int writeStr(char* str);
 void putInt(int n);
+void getInt(int *n);
 
 #endif
