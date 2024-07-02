@@ -22,6 +22,11 @@ LIBRARY := $(BIN_DIR)/libIOLibrary.so
 # Executable name and path
 EXECUTABLE := $(BIN_DIR)/driver
 
+# Library dependencies
+NUM_UTIL_LIB := /home/alex/Desktop/'Assembly Code'/numUtils/bin
+
+NUM_UTIL := NumUtils
+
 # Default target
 # Build shared library and delete temp objs folder
 all: $(LIBRARY) 
@@ -38,7 +43,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s | $(OBJ_DIR)
 
 # Rule to link object files into shared library
 $(LIBRARY): $(OBJS) | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -shared $^ -o $@
+	$(CC) $(CFLAGS) -shared $^ -o $@ -L$(NUM_UTIL_LIB) -l$(NUM_UTIL) -Wl,-rpath,$(NUM_UTIL_LIB)
 
 # Delete temp objs folder
 clean:
@@ -49,11 +54,11 @@ clean:
 run: $(EXECUTABLE)
 	@$(MAKE) clean
 	@echo "Running $(EXECUTABLE)"
-	LD_LIBRARY_PATH=$(BIN_DIR) ./$(EXECUTABLE)
+	./$(EXECUTABLE) 
 
 # Compile driver.c and link with shared library
 $(EXECUTABLE): $(LIBRARY) driver.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -L$(BIN_DIR) -I$(INCLUDE_DIR) driver.c -o $(EXECUTABLE) -lIOLibrary 
+	$(CC) $(CFLAGS) -L$(BIN_DIR) -I$(INCLUDE_DIR) driver.c -o $(EXECUTABLE) -lIOLibrary -Wl,-rpath,$(BIN_DIR)
 
 .PHONY: all clean run
 

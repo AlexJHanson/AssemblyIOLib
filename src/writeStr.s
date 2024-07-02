@@ -9,9 +9,9 @@
         .equ    STDOUT,        1
         .equ    NULL,          0
 # Local vars:
-        .equ    charIndex, -8
-        .equ    count,     -12
-        .equ    localSize, -16
+        .equ    charIndex,    -8
+        .equ    count,        -12
+        .equ    localSize,    -16
 # Code
         .text
         .globl  writeStr

@@ -24,3 +24,6 @@ Returns the number of chars written out.
 provided as libIOLibrary.so
 
 gcc link command *__-lIOLibrary__* 
+
+## DEPENDENCIES
+dependends on libNumUtils.so | @ https://github.com/AlexJHanson/NumUtils

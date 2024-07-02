@@ -8,16 +8,9 @@
 
 int main(void) {
 
-    char text[MAX];
-    int numChars = 0;
+    putInt(-12394);
 
-    writeStr("Enter some text: ");
-    numChars = readLn(text, MAX);
-    writeStr("You entered: ");
-    writeStr(text);
-    printf("\nNumber of chars read: %i\n", numChars);
-    numChars = writeStr("How many chars written out?");
-    printf("\nNumber of chars written: %i\n", numChars);
+    writeStr("\n");
 
     return 0;
 }
