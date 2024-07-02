@@ -19,6 +19,14 @@ Returns the number of chars written out.
 
 *__NOTE:__* *Caller is responsible for passing NULL terminated string!*
 
+__void putInt(int n)__
+
+Writes a signed int to STDOUT 
+
+__void getInt(int *n)__
+
+Reads a signed int from STDIN stores in (int*) argument. Reads 11 chars max: optional - sign and 10 digits. Excess chars will be discarded.
+
 ## Using the library
 
 provided as libIOLibrary.so
